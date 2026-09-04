@@ -6,107 +6,18 @@
                            new (Tên_kiểu) Giá_trị_khởi_tạo
 + Cú pháp của toán tử delete: delete con_trỏ
                               delete [] con_trỏ
-Ví dụ:
-#include <iostream>
 
-int main() {
-    int* ptr = new int(10);
-
-    std::cout << "Gia tri: " << *ptr << std::endl;
-    std::cout << "Dia chi bo nho: " << ptr << std::endl;
-//:: toán tử phạm vi
-    // Giải phóng
-    delete ptr;
-
-    // Tránh con trỏ hoang
-    ptr = nullptr;
-
-    return 0;
-}
 -Hàm inline
 thay thế trực tiếp lời gọi hàm bằng toàn bộ đoạn mã nguồn của hàm đó ngay tại nơi nó được gọi, thay vì thực hiện cơ chế gọi hàm thông thường.
 + Cú pháp: inline kiểu Tên_hàm
            { // thân hàm }
-Ví dụ:
-#include <iostream>
 
-// Khai báo hàm inline
-inline int max(int a, int b) {
-    return (a > b) ? a : b;
-}
-
-int main() {
-    int x = 5, y = 10;
-
-    int result = max(x, y);
-
-    std::cout << "Gia tri lon nhat: " << result << std::endl;
-    return 0;
-}
 - Tham số giá trị mặc định: là tính năng cho phép bạn gán sẵn một giá trị cho tham số của hàm ngay khi khai báo
-Ví dụ:
-#include <iostream>
 
-// Khai báo tham số b và c có giá trị mặc định
-void hienThiThongTin(std::string ten, int tuoi = 18, std::string quocGia = "Viet Nam") {
-    std::cout << ten << " - " << tuoi << " tuoi - Quốc tịch: " << quocGia << std::endl;
-}
-
-int main() {
-   
-    hienThiThongTin("An"); 
-  
-    hienThiThongTin("Binh", 25); 
-
-    hienThiThongTin("Chi", 30, "Nhat Ban"); 
-
-    return 0;
-}
 -Biến tham chiếu: là tên gọi khác của biến đã tồn tại, khi thay đổi dữ liệu trên biến tham chiếu sẽ thay đổi luôn biến gốc
                   khi khai báo dùng dấu '&'
 -Chồng hàm: Cho phép sử dụng 1 tên cho nhiều hàm khác nhau, chỉ cần khác kết quả trả về là được
-#include <iostream>
 
-int add(int a, int b) {
-    return a + b;
-}
-
-double add(double a, double b) {
-    return a + b;
-}
-
-int add(int a, int b, int c) {
-    return a + b + c;
-}
-
-int main() {
-    std::cout << add(3, 4) << std::endl;     
-    std::cout << add(2.5, 4.3) << std::endl;   
-    std::cout << add(1, 2, 3) << std::endl;    
-    return 0;
-}
 -Chồng toán tử: Nạp chồng toán tử cho phép bạn định nghĩa lại cách các toán tử sẵn có (như +, -, *, <<, ==,...) hoạt động trên các kiểu dữ liệu do người dùng tự định nghĩa
-Ví dụ:
-#include <iostream>
 
-class SoPhuc {
-public:
-    int thuc, ao;
 
-    SoPhuc(int r = 0, int i = 0) : thuc(r), ao(i) {}
-    SoPhuc operator+(const SoPhuc &other) {
-        return SoPhuc(thuc + other.thuc, ao + other.ao);
-    }
-
-    void in() {
-        std::cout << thuc << " + " << ao << "i" << std::endl;
-    }
-};
-
-int main() {
-    SoPhuc sp1(3, 4), sp2(1, 2);
-    SoPhuc tong = sp1 + sp2; // Tương đương: sp1.operator+(sp2)
-    
-    tong.in(); // In ra: 4 + 6i
-    return 0;
-}

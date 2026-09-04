@@ -65,6 +65,26 @@ int main() {
 -Biến tham chiếu: là tên gọi khác của biến đã tồn tại, khi thay đổi dữ liệu trên biến tham chiếu sẽ thay đổi luôn biến gốc
                   khi khai báo dùng dấu '&'
 -Chồng hàm: Cho phép sử dụng 1 tên cho nhiều hàm khác nhau, chỉ cần khác kết quả trả về là được
+#include <iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    std::cout << add(3, 4) << std::endl;     
+    std::cout << add(2.5, 4.3) << std::endl;   
+    std::cout << add(1, 2, 3) << std::endl;    
+    return 0;
+}
 -Chồng toán tử: Nạp chồng toán tử cho phép bạn định nghĩa lại cách các toán tử sẵn có (như +, -, *, <<, ==,...) hoạt động trên các kiểu dữ liệu do người dùng tự định nghĩa
 Ví dụ:
 #include <iostream>

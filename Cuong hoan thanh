@@ -5,9 +5,20 @@
 và 
 // chú thích trên một dòng.
 2.Dòng nhập xuất chuẩn:
-+ Sử dụng cin/cout ( iosstream.h) để nhập xuất
++ Sử dụng cin/cout ( iostream.h) để nhập xuất
+#include <iostream>
+int main() {
+    int x;
+    cout <<" nhap mot so nguyen: ";
+    cin >> x;
+    cout << " gia tri vua nhap: " << x << endl;
+    return 0;
+}
 3. Cách chuyển đổi kiểu dữ liệu
 - kiểu (Biểu thức)
+float f = 3.14f;
+int a = (int)f; // kieu C
+int b = int (f); // kieu C++ 
 4. Vị trí khai báo biến
 - Cho phép khai báo linh hoạt bất kì vị trí nào trong một phạm vi cho trước
 - Xen kẽ khai báo dữ liệu vơí các câu lệnh thực hiện
@@ -20,6 +31,8 @@ typedef struct  {
                   int x,y,clour;
                 }PIXEL;
 const PIXEL P={100,100,15};
+#include<iostream>
+
 6.Toán tử phạm vi
 - Dùng để truy xuất một phần tử bị che bởi phạm vi hiện thời 
 - Dùng trong định nghĩa hàm của các phương thức trong các lớp,để khai báo các phương thức chủ của các phương thức đang định nghĩa.

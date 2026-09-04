@@ -1,0 +1,26 @@
+1. Chú thích
+- Cách ghi chú thích
++ gồm hai kiểu chú thích gồm: 
+/* chú thích */ 
+và 
+// chú thích trên một dòng.
+2.Dòng nhập xuất chuẩn:
++ Sử dụng cin/cout ( iosstream.h) để nhập xuất
+3. Cách chuyển đổi kiểu dữ liệu
+- kiểu (Biểu thức)
+4. Vị trí khai báo biến
+- Cho phép khai báo linh hoạt bất kì vị trí nào trong một phạm vi cho trước
+- Xen kẽ khai báo dữ liệu vơí các câu lệnh thực hiện
+5. Kiểu cấu trúc
+- Hằng định kiểu
+-const kiểu  Tên = Biểu_thức;
+-const int MAXSIDE=1000;
+- Đối với cấu trúc:
+typedef struct  {
+                  int x,y,clour;
+                }PIXEL;
+const PIXEL P={100,100,15};
+6.Toán tử phạm vi
+- Dùng để truy xuất một phần tử bị che bởi phạm vi hiện thời 
+- Dùng trong định nghĩa hàm của các phương thức trong các lớp,để khai báo các phương thức chủ của các phương thức đang định nghĩa.
+- Dùng để phân biệt các thành phần trùng tên của các lớp cơ sở.
